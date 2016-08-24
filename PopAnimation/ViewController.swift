@@ -12,6 +12,7 @@ class ViewController: UIViewController,MenuViewDelegate {
     
     let backgroundImageView = UIImageView.init(frame: UIScreen.mainScreen().bounds)
     let button = UIButton.init(type:UIButtonType.Custom)
+    lazy var buttonTitlesArray = ["照相","头条","拍摄","签到","点评","更多"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backgroundImageView.image = UIImage(named: "IMG_3050.PNG")
@@ -20,10 +21,14 @@ class ViewController: UIViewController,MenuViewDelegate {
         self.button.backgroundColor = UIColor.clearColor()
         self.button.addTarget(self, action:"clickOpenMenu", forControlEvents: .TouchUpInside)
         self.view.addSubview(self.button)
+        setPopViewWithPopType(PopViewType.PopViewFromOriginalFrame, backgroundType: PopViewBackGorudType.PopViewBackGroundLight,transitionType: PopViewTransitionType.TransitionWithZoomAndBackgroundColor)
+
+        
+        
+        
     }
     func clickOpenMenu(){
         
-        setPopViewWithPopType(PopViewType.PopViewFromOriginalFrame, backgroundType: PopViewBackGorudType.PopViewBackGroundDark)
          self.view.addSubview(MenuView.MenuViewInstance)
          MenuView.MenuViewInstance.delegate = self
      MenuView.MenuViewInstance.setButtonItems(["camera","idea","lbs","more","photo","review"])
@@ -31,15 +36,21 @@ class ViewController: UIViewController,MenuViewDelegate {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
+
 
 extension MenuViewDelegate{
     func clickMenuViewOnItemWithIndex(index: Int) {
-         MenuView.MenuViewInstance.removeFromSuperview()
+        MenuView.MenuViewInstance.removeFromSuperview()
+         let title = ViewController().buttonTitlesArray[index]
+         let navi =  ContentViewController()
+         navi.title = title
+         print(title)
+         UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(UINavigationController.init(rootViewController: navi), animated: false, completion: { () -> Void in
+            
+         })
+        
     }
     func clickMenuViewOnBottomButton(){
          MenuView.MenuViewInstance.removeFromSuperview()

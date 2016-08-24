@@ -17,6 +17,8 @@
 		D27518A51D65967D0046E98B /* IMG_3050.PNG in Resources */ = {isa = PBXBuildFile; fileRef = D27518A41D65967D0046E98B /* IMG_3050.PNG */; };
 		D27518AA1D65ACD60046E98B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27518A91D65ACD60046E98B /* MenuView.swift */; };
 		D27518AC1D65BCD70046E98B /* MenuButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27518AB1D65BCD70046E98B /* MenuButtonItem.swift */; };
+		D2B62D281D6D927000575190 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B62D271D6D927000575190 /* ContentViewController.swift */; };
+		D2B62D2C1D6D9D1800575190 /* fengjing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2B62D2B1D6D9D1800575190 /* fengjing.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D27518A41D65967D0046E98B /* IMG_3050.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_3050.PNG; sourceTree = "<group>"; };
 		D27518A91D65ACD60046E98B /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D27518AB1D65BCD70046E98B /* MenuButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonItem.swift; sourceTree = "<group>"; };
+		D2B62D271D6D927000575190 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		D2B62D2B1D6D9D1800575190 /* fengjing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fengjing.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +111,10 @@
 				D27518761D658B370046E98B /* ViewController.swift */,
 				D27518A91D65ACD60046E98B /* MenuView.swift */,
 				D27518AB1D65BCD70046E98B /* MenuButtonItem.swift */,
+				D2B62D271D6D927000575190 /* ContentViewController.swift */,
 				D27518781D658B370046E98B /* Main.storyboard */,
 				D27518A41D65967D0046E98B /* IMG_3050.PNG */,
+				D2B62D2B1D6D9D1800575190 /* fengjing.jpg */,
 				D275187B1D658B370046E98B /* Assets.xcassets */,
 				D275187D1D658B370046E98B /* LaunchScreen.storyboard */,
 				D27518801D658B370046E98B /* Info.plist */,
@@ -240,6 +246,7 @@
 			files = (
 				D275187F1D658B370046E98B /* LaunchScreen.storyboard in Resources */,
 				D275187C1D658B370046E98B /* Assets.xcassets in Resources */,
+				D2B62D2C1D6D9D1800575190 /* fengjing.jpg in Resources */,
 				D275187A1D658B370046E98B /* Main.storyboard in Resources */,
 				D27518A51D65967D0046E98B /* IMG_3050.PNG in Resources */,
 			);
@@ -266,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B62D281D6D927000575190 /* ContentViewController.swift in Sources */,
 				D27518771D658B370046E98B /* ViewController.swift in Sources */,
 				D27518AA1D65ACD60046E98B /* MenuView.swift in Sources */,
 				D27518751D658B370046E98B /* AppDelegate.swift in Sources */,

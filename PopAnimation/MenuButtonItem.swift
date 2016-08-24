@@ -13,12 +13,14 @@ class MenuButtonItem: UIControl {
     private let button = UIButton.init(type: UIButtonType.Custom)
     private let title = UILabel.init()
     private var clickBlock =  ({(tag:Int)->Void in})
+    private var image = UIImage.init()
     var imageName:String{
         get{
             return "abc"
         }
         set{
-          button.setBackgroundImage(UIImage.init(named: newValue), forState: .Normal)
+          self.image = UIImage.init(named: newValue)!
+          button.setBackgroundImage(self.image, forState: .Normal)
         }
     }
     var titleString:String{
@@ -39,16 +41,22 @@ class MenuButtonItem: UIControl {
         title.textAlignment = NSTextAlignment.Center
         self.addSubview(button)
         self.addSubview(title)
+        
     }
     ///给item设置block无返回值
     ///- parameter block 闭包参数为tag
     func setItemClickBlock(block:(tag:Int) ->Void){
-      self.clickBlock = block
+         self.clickBlock = block
     }
     func clickOnButton(){
        self.clickBlock(self.tag)
     }
-    
+    func getButtonImageColor() -> UIColor{
+        let pixeData = CGDataProviderCopyData(CGImageGetDataProvider(self.image.CGImage))
+        let data :UnsafePointer<UInt8> = CFDataGetBytePtr(pixeData)
+        let pixeInfo : Int = ((Int(self.bounds.size.width) * Int(20)) + Int(20)) * 4
+        return UIColor.init(red: CGFloat.init(data[pixeInfo])/255.0, green: CGFloat.init(data[pixeInfo+1])/255.0, blue: CGFloat.init(data[pixeInfo+2])/255.0, alpha: CGFloat.init(data[pixeInfo+3])/255.0)
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -61,3 +69,4 @@ class MenuButtonItem: UIControl {
     */
 
 }
+
