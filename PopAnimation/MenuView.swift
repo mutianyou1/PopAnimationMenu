@@ -56,7 +56,6 @@ class MenuView: UIView {
    //MARK:init
    private  override init(frame: CGRect) {
         super.init(frame: frame)
-        self.exclusiveTouch = true
     
     }
     //MARK:add subViews

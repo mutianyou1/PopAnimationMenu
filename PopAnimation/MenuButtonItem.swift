@@ -41,6 +41,7 @@ class MenuButtonItem: UIControl {
         title.font = UIFont.systemFontOfSize(18.0*KHeightScale)
         title.textColor = UIColor.lightGrayColor()
         title.textAlignment = NSTextAlignment.Center
+        button.exclusiveTouch = true
         self.addSubview(button)
         self.addSubview(title)
         
